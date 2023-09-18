@@ -5,11 +5,15 @@ using UnityEngine;
 public class Hazard_Car_Script : MonoBehaviour
 {
     public GameObject Car;
+    public Transform CarTransform;
+    public Rigidbody CarRB;
 
     public bool IsCarAlive;
 
     public int Speed;
-    private Rigidbody _rb;
+
+    private bool isCoroutineRunning = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +28,15 @@ public class Hazard_Car_Script : MonoBehaviour
         {
             // Car moves
 
-            // Doesnt work
-            //Movement();
+            Movement();
+            StartCoroutine(RespawnCoroutine());
+            isCoroutineRunning = true;
+
+            if (isCoroutineRunning == false)
+            {
+                Debug.Log("Respawn Car");
+                // NEED RESPAWN CODE
+            }
 
         }
         else
@@ -35,12 +46,18 @@ public class Hazard_Car_Script : MonoBehaviour
         }
     }
 
+    IEnumerator RespawnCoroutine()
+    {
+        print("Starting Coroutine Execution");
+
+        yield return new WaitForSeconds(5);
+
+        print("Coroutine as ended, Respawning Car");
+        isCoroutineRunning = false;
+    }
+
     private void Movement()
     {
-        var vel = new Vector3(0, 0, 0) * Speed;
-
-        vel.y = _rb.velocity.y;
-
-        _rb.velocity = vel;
+        CarRB.velocity = transform.TransformDirection(new Vector3(Speed, 0, 0));
     }
 }
