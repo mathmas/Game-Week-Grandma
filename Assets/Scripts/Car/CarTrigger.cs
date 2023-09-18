@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CarTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    CarBehaviour carBehaviour;
+
+    private void Start()
     {
-        
+        carBehaviour = GetComponentInParent<CarBehaviour>();
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        if(col.CompareTag("Player"))
+        {
+            carBehaviour.currentSpeed = 0f;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider col)
     {
-        
+        if (col.CompareTag("Player"))
+        {
+            carBehaviour.currentSpeed = carBehaviour.maxSpeed;
+        }
     }
 }
