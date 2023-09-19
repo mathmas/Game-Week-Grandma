@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Lucas/WIDGET/Menu.unity
     guid: 47efae043f698304196ad098d298509f
   - enabled: 1
+    path: Assets/Lucas/WIDGET/StoryScene.unity
+    guid: 0d5caa2b2514bfe4b94045e29c5c2dc1
+  - enabled: 1
     path: Assets/Lucas/Lv1.unity
     guid: 36282675cad0fc141830b528c8cd9e11
   m_configObjects: {}
