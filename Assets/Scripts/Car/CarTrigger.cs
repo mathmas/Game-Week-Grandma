@@ -16,6 +16,7 @@ public class CarTrigger : MonoBehaviour
         restWaitTime = maxWaitTime;
     }
 
+    //Stop moving if a player is stoping
     private void OnTriggerStay(Collider col)
     {
         if(col.CompareTag("Player"))
@@ -34,6 +35,7 @@ public class CarTrigger : MonoBehaviour
         }
     }
 
+    //The car doesnt run into each other
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Car"))
