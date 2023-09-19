@@ -16,29 +16,31 @@ public class CarTrigger : MonoBehaviour
         restWaitTime = maxWaitTime;
     }
 
+    //Stop moving if a player is stoping
     private void OnTriggerStay(Collider col)
     {
         if(col.CompareTag("Player"))
         {
             playerController = col.GetComponent<PlayerController>();
 
-            if(playerController.state == "stop" && restWaitTime > 0) 
+            if(playerController.stopActionInput && restWaitTime > 0) 
             {
-                carBehaviour.currentSpeed = 0f;
+                carBehaviour.speed = 0f;
                 restWaitTime -= Time.deltaTime;
             }
             else
             {
-                carBehaviour.currentSpeed = carBehaviour.maxSpeed;
+                carBehaviour.speed = carBehaviour.maxSpeed;
             }
         }
     }
 
+    //The car doesnt run into each other
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Car"))
         {
-            carBehaviour.currentSpeed = 0f;
+            carBehaviour.speed = 0f;
         }
     }
 
@@ -46,7 +48,7 @@ public class CarTrigger : MonoBehaviour
     {
         if (col.CompareTag("Car"))
         {
-            carBehaviour.currentSpeed = carBehaviour.maxSpeed;
+            carBehaviour.speed = carBehaviour.maxSpeed;
         }
     }
 }
