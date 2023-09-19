@@ -868,8 +868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legacyText: {fileID: 1570997440}
-  hoverDistance: 10
-  hoverSpeed: 1
+  hoverDistance: 20
+  hoverSpeed: 2
 --- !u!1 &1570997438
 GameObject:
   m_ObjectHideFlags: 0
