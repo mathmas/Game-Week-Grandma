@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b348b3b5f66904440a8091c3f200092d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 1
+  sceneBuildIndex: 2
 --- !u!82 &1545703900
 AudioSource:
   m_ObjectHideFlags: 0
