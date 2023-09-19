@@ -22,7 +22,7 @@ public class CarTrigger : MonoBehaviour
         {
             playerController = col.GetComponent<PlayerController>();
 
-            if(playerController.state == "stop" && restWaitTime > 0) 
+            if(playerController.stopActionInput && restWaitTime > 0) 
             {
                 carBehaviour.currentSpeed = 0f;
                 restWaitTime -= Time.deltaTime;
