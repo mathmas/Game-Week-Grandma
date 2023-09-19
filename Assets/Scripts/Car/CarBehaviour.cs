@@ -5,6 +5,7 @@ public class CarBehaviour : MonoBehaviour
 {
     public float speed, maxSpeed, maxForce;
     public Rigidbody rb;
+    public Vector3 direction;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class CarBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 currentVelocity = rb.velocity;
-        Vector3 targetVelocity = Vector3.left;
+        Vector3 targetVelocity = direction;
         targetVelocity *= speed;
 
         Vector3 velocityChange = targetVelocity - currentVelocity;
