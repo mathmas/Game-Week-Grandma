@@ -5,18 +5,17 @@ using UnityEngine;
 public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private float spawnRate;
-    [SerializeField] private bool carGoesLeft;
 
     private float timeLeft;
     private int objectBlockingSpawn;
 
     public GameObject carPrefab;
     [SerializeField] private Vector3 carDirection;
-    [SerializeField] private Quaternion carRotation;
 
     private void Start()
     {
         timeLeft = spawnRate;
+        carDirection.Normalize();
     }
 
     private void Update()
@@ -31,7 +30,7 @@ public class CarSpawner : MonoBehaviour
 
     void SpawnCar()
     {
-        GameObject carSpawed = Instantiate(carPrefab, transform.position, carRotation);
+        GameObject carSpawed = Instantiate(carPrefab, transform.position, transform.rotation);
         CarBehaviour carBehaviour = carSpawed.GetComponent<CarBehaviour>();
         carBehaviour.direction = carDirection;
 

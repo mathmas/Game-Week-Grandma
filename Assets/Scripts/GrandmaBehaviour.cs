@@ -20,8 +20,13 @@ public class GrandmaBehaviour : MonoBehaviour
         for(int i = 0; i < checkpoint.childCount ; i++) 
         {
             checkpointsList.Add(checkpoint.GetChild(i).gameObject);
-        }
 
+            //Set the Y axis
+            Vector3 chekcpointPos = checkpointsList[i].transform.position;
+            chekcpointPos.y = transform.position.y;
+            checkpointsList[i].transform.position = chekcpointPos;
+
+        }
     }
 
     // Update is called once per frame
