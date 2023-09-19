@@ -36,10 +36,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Player movements
     private void FixedUpdate()
     {
         Vector3 currentVelocity = rb.velocity;
-        Vector3 targetVelocity = new Vector3(movementInput.x, 0, movementInput.y);
+        Vector3 targetVelocity = new Vector3(movementInput.x, rb.velocity.y, movementInput.y);
         targetVelocity *= speed;
 
         Vector3 velocityChange = targetVelocity - currentVelocity;

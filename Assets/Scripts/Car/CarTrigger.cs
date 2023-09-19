@@ -25,12 +25,12 @@ public class CarTrigger : MonoBehaviour
 
             if(playerController.stopActionInput && restWaitTime > 0) 
             {
-                carBehaviour.currentSpeed = 0f;
+                carBehaviour.speed = 0f;
                 restWaitTime -= Time.deltaTime;
             }
             else
             {
-                carBehaviour.currentSpeed = carBehaviour.maxSpeed;
+                carBehaviour.speed = carBehaviour.maxSpeed;
             }
         }
     }
@@ -40,7 +40,7 @@ public class CarTrigger : MonoBehaviour
     {
         if (col.CompareTag("Car"))
         {
-            carBehaviour.currentSpeed = 0f;
+            carBehaviour.speed = 0f;
         }
     }
 
@@ -48,7 +48,7 @@ public class CarTrigger : MonoBehaviour
     {
         if (col.CompareTag("Car"))
         {
-            carBehaviour.currentSpeed = carBehaviour.maxSpeed;
+            carBehaviour.speed = carBehaviour.maxSpeed;
         }
     }
 }
