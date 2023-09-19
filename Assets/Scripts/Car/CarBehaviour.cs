@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 public class CarBehaviour : MonoBehaviour
 {
-    public float maxSpeed;
-    public float currentSpeed;
+    public float speed, maxSpeed, maxForce;
+    public Rigidbody rb;
 
     private void Start()
     {
-        currentSpeed = maxSpeed;
+        rb = GetComponent<Rigidbody>();
+        maxSpeed = speed;
     }
 
-    private void Update()
+    //Car movement
+    private void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+        Vector3 currentVelocity = rb.velocity;
+        Vector3 targetVelocity = Vector3.left;
+        targetVelocity *= speed;
+
+        Vector3 velocityChange = targetVelocity - currentVelocity;
+
+        Vector3.ClampMagnitude(velocityChange, maxForce);
+
+        rb.AddForce(velocityChange, ForceMode.VelocityChange);
     }
 }
