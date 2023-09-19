@@ -11,6 +11,8 @@ public class CarSpawner : MonoBehaviour
     private int objectBlockingSpawn;
 
     public GameObject carPrefab;
+    [SerializeField] private Vector3 carDirection;
+    [SerializeField] private Quaternion carRotation;
 
     private void Start()
     {
@@ -29,17 +31,9 @@ public class CarSpawner : MonoBehaviour
 
     void SpawnCar()
     {
-        GameObject carSpawed = Instantiate(carPrefab, transform.position, carPrefab.transform.rotation);
+        GameObject carSpawed = Instantiate(carPrefab, transform.position, carRotation);
         CarBehaviour carBehaviour = carSpawed.GetComponent<CarBehaviour>();
-
-        if (carGoesLeft)
-        {
-            carBehaviour.transform.Rotate(new Vector3(0f, 180f, 0f));
-            carBehaviour.direction = Vector3.right;
-        }else
-        {
-            carBehaviour.direction = Vector3.left;
-        }
+        carBehaviour.direction = carDirection;
 
     }
 
