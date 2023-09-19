@@ -634,8 +634,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.639465, y: -22.0339}
-  m_SizeDelta: {x: 2049.2788, y: 1032.069}
+  m_AnchoredPosition: {x: 33.639465, y: 21.176}
+  m_SizeDelta: {x: 2049.279, y: 1176.421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336779023
 MonoBehaviour:
@@ -869,7 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   legacyText: {fileID: 1570997440}
   hoverDistance: 20
-  hoverSpeed: 2
+  hoverSpeed: 5
 --- !u!1 &1570997438
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -167.77484}
-  m_SizeDelta: {x: 1266.584, y: 205.2151}
+  m_SizeDelta: {x: 1442.693, y: 205.215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1570997440
 MonoBehaviour:
