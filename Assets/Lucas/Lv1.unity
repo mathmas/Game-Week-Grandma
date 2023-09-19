@@ -4437,6 +4437,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 869410300637306311, guid: 7184b6189b6316c4b850f7ffb5578859, type: 3}
   m_PrefabInstance: {fileID: 411021016}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &413941114
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.321273
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.495678
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653944182201142346, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203819024041679449, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      propertyPath: m_Name
+      value: Car
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5436075601727278955, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 413941116}
+  m_SourcePrefab: {fileID: 100100000, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+--- !u!1 &413941115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5436075601727278955, guid: 4f7c2cd981af3264b8bc02b1d54e1c5b, type: 3}
+  m_PrefabInstance: {fileID: 413941114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &413941116
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413941115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07413784a62ccfd4cbd324a14b34c83b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &434045481
 GameObject:
   m_ObjectHideFlags: 0
@@ -8690,6 +8776,10 @@ PrefabInstance:
     - target: {fileID: 6985668006311813284, guid: dade319a909302e4b903dccc8b51a99a, type: 3}
       propertyPath: m_Name
       value: Car Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002014716110456905, guid: dade319a909302e4b903dccc8b51a99a, type: 3}
+      propertyPath: spawnRate
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9002014716110456905, guid: dade319a909302e4b903dccc8b51a99a, type: 3}
       propertyPath: carDirection.x
@@ -20570,3 +20660,4 @@ SceneRoots:
   - {fileID: 142620555}
   - {fileID: 1738484947}
   - {fileID: 1393413169}
+  - {fileID: 413941114}
