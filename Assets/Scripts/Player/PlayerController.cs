@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         if (gameManager != null)
         {
             GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
-            gameManagerScript.players.Add(this.gameObject);
+            gameManagerScript.playersObj.Add(this.gameObject);
         }
     }
 }

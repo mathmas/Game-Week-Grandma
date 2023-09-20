@@ -45,18 +45,20 @@ public class GrandmaBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetVelocity = checkpointsList[0].transform.position - transform.position;
-
-        if(Vector3.Distance(transform.position, checkpointsList[0].transform.position) < 1) 
+        if(!rb.isKinematic)
         {
-            Destroy(checkpointsList[0]);
-            checkpointsList.RemoveAt(0);
-        }
-        targetVelocity.Normalize();
-        
-        targetVelocity *= speed; 
-        rb.velocity = targetVelocity;
+            Vector3 targetVelocity = checkpointsList[0].transform.position - transform.position;
 
+            if (Vector3.Distance(transform.position, checkpointsList[0].transform.position) < 1)
+            {
+                Destroy(checkpointsList[0]);
+                checkpointsList.RemoveAt(0);
+            }
+            targetVelocity.Normalize();
+
+            targetVelocity *= speed;
+            rb.velocity = targetVelocity;
+        }
     }
 
     private void SetGameManager()

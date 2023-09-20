@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Players
-    public List<GameObject> players;
+    public List<GameObject> playersObj = new List<GameObject>();
+    public List<Material> playerMaterials = new List<Material>();
     #endregion
 
     [SerializeField] private float playerDistanceTP;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
             rbGrandma = grandma.GetComponent<Rigidbody>();
             if (rbGrandma.isKinematic)
             {
-                if (players.Count > 1)
+                if (playersObj.Count > 1)
                 {
                     rbGrandma.isKinematic = false;
                 }
@@ -35,12 +36,12 @@ public class GameManager : MonoBehaviour
         }
 
         //TP player near grandma if there distance is to big
-        for (int i = 0; i < players.Count; i++)
+        for (int i = 0; i < playersObj.Count; i++)
         {
-            float playerDistance = Vector3.Distance(players[i].transform.position, grandma.transform.position);
+            float playerDistance = Vector3.Distance(playersObj[i].transform.position, grandma.transform.position);
             if (playerDistance > playerDistanceTP)
             {
-                players[i].transform.position = grandma.transform.position + Vector3.back * 2f;
+                playersObj[i].transform.position = grandma.transform.position + Vector3.back * 2f;
             }
         }
     }
