@@ -16,10 +16,17 @@ public class GrandmaBehaviour : MonoBehaviour
 
     public Rigidbody rb;
     public Transform checkpoint;
+    private GameObject gameManager;
 
     private List<GameObject> checkpointsList = new List<GameObject>();
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        SetGameManager();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -50,5 +57,15 @@ public class GrandmaBehaviour : MonoBehaviour
         targetVelocity *= speed; 
         rb.velocity = targetVelocity;
 
+    }
+
+    private void SetGameManager()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        if (gameManager != null)
+        {
+            GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+            gameManagerScript.grandma = this.gameObject;
+        }
     }
 }
