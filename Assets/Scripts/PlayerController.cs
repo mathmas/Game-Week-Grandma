@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,9 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slowDivision;
     public Rigidbody rb;
 
+    public GameObject trigger;
+
     #region Inputs
     public Vector2 movementInput;
     public bool stopActionInput = false;
+    public bool interactInput = false;
     #endregion
 
     #endregion
@@ -34,6 +38,15 @@ public class PlayerController : MonoBehaviour
         {
             speed = maxSpeed;
         }
+
+        if(interactInput)
+        {
+            Debug.Log("interact Input");
+            trigger.SetActive(true);
+        }else
+        {
+            trigger.SetActive(false);
+        }
     }
 
     //Player movements
@@ -47,9 +60,12 @@ public class PlayerController : MonoBehaviour
 
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
-        rb.AddForce(velocityChange, ForceMode.VelocityChange);  
+        rb.AddForce(velocityChange, ForceMode.VelocityChange);
+        //makes player look forward
+        transform.LookAt(new Vector3(transform.position.x + targetVelocity.x, transform.position.y, transform.position.z + targetVelocity.z));
     }
 
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
     public void OnAction1(InputAction.CallbackContext ctx) => stopActionInput = ctx.ReadValueAsButton();
+    public void OnAction2(InputAction.CallbackContext ctx) => interactInput = ctx.ReadValueAsButton();
 }
