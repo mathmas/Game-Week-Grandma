@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+/*
+ * This script is the behaviour of the grandma
+ * It makes the grandma move
+ * The grandma move by going to chekcpoints
+ */
+
 public class GrandmaBehaviour : MonoBehaviour
 {
 

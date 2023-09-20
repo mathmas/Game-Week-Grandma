@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/*
+ * This script is the behaviour of the cars
+ * It makes the cars move
+ */
 public class CarBehaviour : MonoBehaviour
 {
     public float speed, maxSpeed, maxForce;

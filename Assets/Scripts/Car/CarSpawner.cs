@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script is a car spawner
+ * It instantiates the cars with a spawnRate
+ */
 public class CarSpawner : MonoBehaviour
 {
+    public GameObject carPrefab;
     [SerializeField] private float spawnRate;
+    [SerializeField] private Vector3 carDirection;
 
     private float timeLeft;
     private int objectBlockingSpawn;
 
-    public GameObject carPrefab;
-    [SerializeField] private Vector3 carDirection;
-
     private void Start()
     {
-        timeLeft = spawnRate;
         carDirection.Normalize();
     }
-
+    //Timer + initiates cars
     private void Update()
     {
         timeLeft -= Time.deltaTime;
@@ -36,6 +38,7 @@ public class CarSpawner : MonoBehaviour
 
     }
 
+    //Block the spawn of car if something block the spawner
     private void OnTriggerEnter()
     {
         objectBlockingSpawn++;

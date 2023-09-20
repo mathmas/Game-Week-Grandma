@@ -66,7 +66,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fc74f0b2f6a5148998273d73730af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwMultiplicator: 1.5
+  verticalThrowForce: 3
   grabPoint: {fileID: 8042123683323328297}
+  grabedObject: {fileID: 0}
+  player: {fileID: 7540150464326754595}
 --- !u!1 &2735123758858322470
 GameObject:
   m_ObjectHideFlags: 0
