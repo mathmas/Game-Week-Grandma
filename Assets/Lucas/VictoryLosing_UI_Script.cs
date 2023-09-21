@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class VictoryLosing_UI_Script : MonoBehaviour
 {
-    public Text VictoryText;
+    public GameObject VictoryAssets;
     public Text LoseText;
     public GameObject BackgroundImage;
+
+    public int sceneBuildIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        VictoryText.gameObject.SetActive(false);
+        VictoryAssets.gameObject.SetActive(false);
         LoseText.gameObject.SetActive(false);
         BackgroundImage.gameObject.SetActive(false);
     }
@@ -20,7 +23,18 @@ public class VictoryLosing_UI_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if Victory = true alors SetActive(true);
-        // if Lose = true alors SetActive(true);
+
+    }
+
+    public void Victory()
+    {
+        VictoryAssets.gameObject.SetActive(true);
+        BackgroundImage.gameObject.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        // This will load the next index scene
+        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
     }
 }
