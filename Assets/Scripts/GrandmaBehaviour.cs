@@ -46,6 +46,11 @@ public class GrandmaBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (checkpointsList[0] != null)
+        {
+            rb.isKinematic = true;
+        }
+
         if(!rb.isKinematic)
         {
             animator.SetBool("isMoving", true);
@@ -70,6 +75,7 @@ public class GrandmaBehaviour : MonoBehaviour
         if(col.gameObject.CompareTag("Grab") || col.gameObject.CompareTag("Car"))
         {
             animator.SetBool("isDead", true);
+            rb.isKinematic = true;
 
             //Game Over script
         }
