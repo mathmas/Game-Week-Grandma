@@ -11,6 +11,7 @@ public class CarBehaviour : MonoBehaviour
     public float speed, maxSpeed, maxForce;
     public Rigidbody rb;
     public Vector3 direction;
+    public Animator animator;
 
     public MeshRenderer carMaterial;
 
@@ -20,6 +21,8 @@ public class CarBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         maxSpeed = speed;
+
+        animator.SetBool("isMoving", true);
 
         //choose rnd material
         carMaterial.material = materials[Random.Range(0, materials.Count)];
@@ -37,5 +40,13 @@ public class CarBehaviour : MonoBehaviour
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
         rb.AddForce(velocityChange, ForceMode.VelocityChange);
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(!col.gameObject.CompareTag("Player"))
+        {
+            animator.SetBool("isDead", true);
+        }
     }
 }

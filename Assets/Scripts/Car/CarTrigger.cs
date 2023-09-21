@@ -52,6 +52,7 @@ public class CarTrigger : MonoBehaviour
         if (col.CompareTag("Car"))
         {
             carBehaviour.speed = 0f;
+            carBehaviour.animator.SetBool("isMoving", false);
         }
     }
     private void OnTriggerExit(Collider col)
@@ -59,6 +60,7 @@ public class CarTrigger : MonoBehaviour
         if (col.CompareTag("Car"))
         {
             carBehaviour.speed = carBehaviour.maxSpeed;
+            carBehaviour.animator.SetBool("isMoving", true);
         }
     }
 }
