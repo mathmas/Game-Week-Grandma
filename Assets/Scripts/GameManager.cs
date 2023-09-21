@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     #region Players
     public List<GameObject> playersObj = new List<GameObject>();
-    public List<Material> playerMaterials = new List<Material>();
+    public Material player2Material;
     #endregion
 
     [SerializeField] private float playerDistanceTP;
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
             {
                 if (playersObj.Count > 1)
                 {
+                    playersObj[1].GetComponent<PlayerController>().meshRenderer.material = player2Material;
                     rbGrandma.isKinematic = false;
                 }
             }

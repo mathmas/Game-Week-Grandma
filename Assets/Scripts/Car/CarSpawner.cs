@@ -13,7 +13,6 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] private Vector3 carDirection;
 
     private float timeLeft;
-    private int objectBlockingSpawn;
 
     private void Start()
     {
@@ -23,7 +22,7 @@ public class CarSpawner : MonoBehaviour
     private void Update()
     {
         timeLeft -= Time.deltaTime;
-        if (timeLeft < 0 && objectBlockingSpawn < 1)
+        if (timeLeft < 0)
         {
             SpawnCar();
             timeLeft = spawnRate;
@@ -38,13 +37,4 @@ public class CarSpawner : MonoBehaviour
 
     }
 
-    //Block the spawn of car if something block the spawner
-    private void OnTriggerEnter()
-    {
-        objectBlockingSpawn++;
-    }
-    private void OnTriggerExit()
-    {
-        objectBlockingSpawn--;
-    }
 }

@@ -57,14 +57,17 @@ public class PlayerGrabBehaviour : MonoBehaviour
     //Throw the grabed item
     private void OnDisable()
     {
-        Rigidbody rb = grabedObject.GetComponent<Rigidbody>();
-        Collider collider = grabedObject.GetComponent<Collider>();
+        if(grabedObject != null)
+        {
+            Rigidbody rb = grabedObject.GetComponent<Rigidbody>();
+            Collider collider = grabedObject.GetComponent<Collider>();
 
-        rb.isKinematic = false;
-        collider.isTrigger = false;
+            rb.isKinematic = false;
+            collider.isTrigger = false;
 
-        grabedObject.transform.SetParent(null);
-        Rigidbody playerRB = player.GetComponent<Rigidbody>();
-        rb.AddForce(playerRB.velocity * throwMultiplicator + Vector3.up * verticalThrowForce, ForceMode.VelocityChange);
+            grabedObject.transform.SetParent(null);
+            Rigidbody playerRB = player.GetComponent<Rigidbody>();
+            rb.AddForce(playerRB.velocity * throwMultiplicator + Vector3.up * verticalThrowForce, ForceMode.VelocityChange);
+        }
     }
 }

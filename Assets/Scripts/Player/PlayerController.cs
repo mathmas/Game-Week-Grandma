@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public GameObject trigger;
     private GameObject gameManager;
 
+    public MeshRenderer meshRenderer;
+
     #region Inputs
     public Vector2 movementInput;
     public bool stopActionInput = false;

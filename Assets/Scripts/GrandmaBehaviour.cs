@@ -37,7 +37,7 @@ public class GrandmaBehaviour : MonoBehaviour
 
             //Set the Y axis
             Vector3 chekcpointPos = checkpointsList[i].transform.position;
-            chekcpointPos.y = transform.position.y;
+            chekcpointPos.y = transform.position.y + 0.5f;
             checkpointsList[i].transform.position = chekcpointPos;
 
         }
@@ -51,7 +51,7 @@ public class GrandmaBehaviour : MonoBehaviour
             animator.SetBool("isMoving", true);
             Vector3 targetVelocity = checkpointsList[0].transform.position - transform.position;
 
-            if (Vector3.Distance(transform.position, checkpointsList[0].transform.position) < 1)
+            if (Vector3.Distance(transform.position, checkpointsList[0].transform.position) < 2)
             {
                 Destroy(checkpointsList[0]);
                 checkpointsList.RemoveAt(0);

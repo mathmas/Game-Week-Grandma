@@ -12,6 +12,7 @@ public class CarBehaviour : MonoBehaviour
     public Rigidbody rb;
     public Vector3 direction;
     public Animator animator;
+    public GameObject particleExplosion;
 
     public MeshRenderer carMaterial;
 
@@ -47,6 +48,8 @@ public class CarBehaviour : MonoBehaviour
         if(!col.gameObject.CompareTag("Player"))
         {
             animator.SetBool("isDead", true);
+            particleExplosion.SetActive(true);
+            Destroy(this.gameObject, 1f);
         }
     }
 }
