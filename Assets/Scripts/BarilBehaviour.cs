@@ -11,6 +11,7 @@ public class BarilBehaviour : MonoBehaviour
         if (!col.gameObject.CompareTag("Ground"))
         {
             GameObject barilExplosionObj = Instantiate(barilExplosionPrefab, transform.position, barilExplosionPrefab.transform.rotation);
+            Destroy(this);
         }
     }
 }
