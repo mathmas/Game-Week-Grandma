@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 916d5908ef8d3444fa2bb4cd005d95ea, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Grab
       objectReference: {fileID: 0}
     - target: {fileID: 3566390031902043909, guid: 916d5908ef8d3444fa2bb4cd005d95ea, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -75,5 +75,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 916d5908ef8d3444fa2bb4cd005d95ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 395526777650672455}
   m_SourcePrefab: {fileID: 100100000, guid: 916d5908ef8d3444fa2bb4cd005d95ea, type: 3}
+--- !u!1 &3702268645435424859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 916d5908ef8d3444fa2bb4cd005d95ea, type: 3}
+  m_PrefabInstance: {fileID: 4584788005498387722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &395526777650672455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702268645435424859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51caab15951b8c24e98a68fe02bd83cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barilExplosionPrefab: {fileID: 3702268645435424859}
