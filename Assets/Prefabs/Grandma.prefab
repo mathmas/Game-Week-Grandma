@@ -5584,6 +5584,7 @@ MonoBehaviour:
   speed: 6
   rb: {fileID: 0}
   checkpoint: {fileID: 9065333140355979114}
+  animator: {fileID: 6417838230009108361}
 --- !u!1 &3192646030465176648
 GameObject:
   m_ObjectHideFlags: 0
