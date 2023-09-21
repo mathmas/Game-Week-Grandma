@@ -47,5 +47,5 @@ MonoBehaviour:
   grandma: {fileID: 0}
   rbGrandma: {fileID: 0}
   playersObj: []
-  playerMaterials: []
+  player2Material: {fileID: 2100000, guid: 64ed94a52289fc241b0bc62ec16786b9, type: 2}
   playerDistanceTP: 10
