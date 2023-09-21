@@ -7,12 +7,17 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     #region Variables
+    #region movements
     public float speed, maxForce;
     private float maxSpeed;
     [SerializeField] private float slowDivision;
-    public Rigidbody rb;
+    #endregion
 
+    public Rigidbody rb;
     public GameObject trigger;
+    private GameObject gameManager;
+
+    public MeshRenderer meshRenderer;
 
     #region Inputs
     public Vector2 movementInput;
@@ -26,24 +31,25 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         maxSpeed = speed;
+        SetGameManager();
     }
 
     private void Update()
     {
 
-        if(stopActionInput)
+        if (stopActionInput)
         {
             speed = maxSpeed / slowDivision;
-        }else
+        } else
         {
             speed = maxSpeed;
         }
 
-        if(interactInput)
+        if (interactInput)
         {
             Debug.Log("interact Input");
             trigger.SetActive(true);
-        }else
+        } else
         {
             trigger.SetActive(false);
         }
@@ -68,4 +74,14 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
     public void OnAction1(InputAction.CallbackContext ctx) => stopActionInput = ctx.ReadValueAsButton();
     public void OnAction2(InputAction.CallbackContext ctx) => interactInput = ctx.ReadValueAsButton();
+
+    private void SetGameManager()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        if (gameManager != null)
+        {
+            GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+            gameManagerScript.playersObj.Add(this.gameObject);
+        }
+    }
 }
