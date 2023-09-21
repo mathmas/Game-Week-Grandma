@@ -36,6 +36,10 @@ public class CarTrigger : MonoBehaviour
 
             if(playerController.stopActionInput && restWaitTime > 0) 
             {
+                if(carBehaviour.speed > 1f)
+                {
+                    carBehaviour.PlayerStopSound();
+                }
                 carBehaviour.speed = 0f;
             }
             else
@@ -50,11 +54,15 @@ public class CarTrigger : MonoBehaviour
         if(carBehaviour.speed < 1)
         {
             restWaitTime -= Time.deltaTime;
-        }
 
-        if(restWaitTime < 0)
-        {
-            carBehaviour.speed = carBehaviour.maxSpeed;
+            if (restWaitTime < 0)
+            {
+                carBehaviour.speed = carBehaviour.maxSpeed;
+            }
+            else if (restWaitTime < 0.5f)
+            {
+                carBehaviour.CarHornAudio();
+            }
         }
     }
 
