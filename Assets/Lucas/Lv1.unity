@@ -55135,7 +55135,7 @@ GameObject:
   - component: {fileID: 1901149341}
   - component: {fileID: 1901149342}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: GoalForThePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
