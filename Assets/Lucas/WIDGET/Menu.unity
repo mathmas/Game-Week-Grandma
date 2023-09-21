@@ -180,8 +180,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The Team :\n\n\n\n3D Artists : Mathieu Mas\n\t\t Nathana\xEBl Francez\n\n\nGame
-    Designer & Codeur : Tom Le Guennec\n\n\nLevel Designer :\t Lucas Brouillard"
+  m_text: "The Team :\n\n\n\n3D Artists : Tom Le Guennec\n\t\t Nathana\xEBl Francez\n\n\n\nGame
+    Designer & Programmer : Mathieu Mas\n\n\nLevel Designer & Sound Design : Lucas
+    Brouillard"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
