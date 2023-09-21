@@ -11,6 +11,11 @@ public class CarBehaviour : MonoBehaviour
     public float speed, maxSpeed, maxForce;
     public Rigidbody rb;
     public Vector3 direction;
+    public Animator animator;
+    public GameObject particleExplosion;
+    public AudioSource playerStopAudio;
+    public AudioSource carHornAudio;
+    public AudioSource explosionAudio;
 
     public MeshRenderer carMaterial;
 
@@ -20,6 +25,8 @@ public class CarBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         maxSpeed = speed;
+
+        animator.SetBool("isMoving", true);
 
         //choose rnd material
         carMaterial.material = materials[Random.Range(0, materials.Count)];
@@ -37,5 +44,31 @@ public class CarBehaviour : MonoBehaviour
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
         rb.AddForce(velocityChange, ForceMode.VelocityChange);
+    }
+
+    public void PlayerStopSound()
+    {
+        playerStopAudio.Play();
+    }
+
+    public void CarHornAudio()
+    {
+        carHornAudio.Play();
+    }
+
+    public void ExplosionAudio()
+    {
+        explosionAudio.Play();
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(!col.gameObject.CompareTag("Player"))
+        {
+            ExplosionAudio();
+            animator.SetBool("isDead", true);
+            particleExplosion.SetActive(true);
+            Destroy(this.gameObject, 1f);
+        }
     }
 }

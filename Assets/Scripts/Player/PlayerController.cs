@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public GameObject trigger;
     private GameObject gameManager;
+
+    public MeshRenderer meshRenderer;
 
     #region Inputs
     public Vector2 movementInput;

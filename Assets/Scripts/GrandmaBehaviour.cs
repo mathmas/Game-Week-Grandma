@@ -17,6 +17,8 @@ public class GrandmaBehaviour : MonoBehaviour
     public Rigidbody rb;
     public Transform checkpoint;
     private GameObject gameManager;
+    public Animator animator;
+    public AudioSource gameOverSound;
 
     private List<GameObject> checkpointsList = new List<GameObject>();
 
@@ -36,7 +38,7 @@ public class GrandmaBehaviour : MonoBehaviour
 
             //Set the Y axis
             Vector3 chekcpointPos = checkpointsList[i].transform.position;
-            chekcpointPos.y = transform.position.y;
+            chekcpointPos.y = transform.position.y + 0.5f;
             checkpointsList[i].transform.position = chekcpointPos;
 
         }
@@ -45,11 +47,17 @@ public class GrandmaBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (checkpointsList[0] == null)
+        {
+            rb.isKinematic = true;
+        }
+
         if(!rb.isKinematic)
         {
+            animator.SetBool("isMoving", true);
             Vector3 targetVelocity = checkpointsList[0].transform.position - transform.position;
 
-            if (Vector3.Distance(transform.position, checkpointsList[0].transform.position) < 1)
+            if (Vector3.Distance(transform.position, checkpointsList[0].transform.position) < 2)
             {
                 Destroy(checkpointsList[0]);
                 checkpointsList.RemoveAt(0);
@@ -58,6 +66,21 @@ public class GrandmaBehaviour : MonoBehaviour
 
             targetVelocity *= speed;
             rb.velocity = targetVelocity;
+            transform.LookAt(checkpointsList[0].transform.position);
+        }else
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.CompareTag("Grab") || col.gameObject.CompareTag("Car"))
+        {
+            animator.SetBool("isDead", true);
+            rb.isKinematic = true;
+
+            //Game Over script
+            gameOverSound.Play();
         }
     }
 

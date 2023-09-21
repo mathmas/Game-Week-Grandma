@@ -36,12 +36,32 @@ public class CarTrigger : MonoBehaviour
 
             if(playerController.stopActionInput && restWaitTime > 0) 
             {
+                if(carBehaviour.speed > 1f)
+                {
+                    carBehaviour.PlayerStopSound();
+                }
                 carBehaviour.speed = 0f;
-                restWaitTime -= Time.deltaTime;
             }
             else
             {
                 carBehaviour.speed = carBehaviour.maxSpeed;
+            }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if(carBehaviour.speed < 1)
+        {
+            restWaitTime -= Time.deltaTime;
+
+            if (restWaitTime < 0)
+            {
+                carBehaviour.speed = carBehaviour.maxSpeed;
+            }
+            else if (restWaitTime < 0.5f)
+            {
+                carBehaviour.CarHornAudio();
             }
         }
     }
@@ -52,6 +72,7 @@ public class CarTrigger : MonoBehaviour
         if (col.CompareTag("Car"))
         {
             carBehaviour.speed = 0f;
+            carBehaviour.animator.SetBool("isMoving", false);
         }
     }
     private void OnTriggerExit(Collider col)
@@ -59,6 +80,7 @@ public class CarTrigger : MonoBehaviour
         if (col.CompareTag("Car"))
         {
             carBehaviour.speed = carBehaviour.maxSpeed;
+            carBehaviour.animator.SetBool("isMoving", true);
         }
     }
 }
