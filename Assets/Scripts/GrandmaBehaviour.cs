@@ -46,7 +46,7 @@ public class GrandmaBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (checkpointsList[0] != null)
+        if (checkpointsList[0] == null)
         {
             rb.isKinematic = true;
         }
