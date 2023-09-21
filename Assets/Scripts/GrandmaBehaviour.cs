@@ -18,6 +18,7 @@ public class GrandmaBehaviour : MonoBehaviour
     public Transform checkpoint;
     private GameObject gameManager;
     public Animator animator;
+    public AudioSource gameOverSound;
 
     private List<GameObject> checkpointsList = new List<GameObject>();
 
@@ -65,6 +66,7 @@ public class GrandmaBehaviour : MonoBehaviour
 
             targetVelocity *= speed;
             rb.velocity = targetVelocity;
+            transform.LookAt(checkpointsList[0].transform.position);
         }else
         {
             animator.SetBool("isMoving", false);
@@ -78,6 +80,7 @@ public class GrandmaBehaviour : MonoBehaviour
             rb.isKinematic = true;
 
             //Game Over script
+            gameOverSound.Play();
         }
     }
 
