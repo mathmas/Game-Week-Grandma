@@ -225,6 +225,12 @@ MonoBehaviour:
   maxForce: 1
   rb: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+  carMaterial: {fileID: 5336782424679867926}
+  materials:
+  - {fileID: 2100000, guid: 6cf1754ae2c81204cba689faf03008a7, type: 2}
+  - {fileID: 2100000, guid: bb908196a770ab3408b5c02675efaa7d, type: 2}
+  - {fileID: 2100000, guid: 84cf0f30d4d390a4aa57afa8e8dbf6ec, type: 2}
+  - {fileID: 2100000, guid: a75e06e42e7a5e8498d31e85d1a11075, type: 2}
 --- !u!54 &2953888828939850149
 Rigidbody:
   m_ObjectHideFlags: 0
