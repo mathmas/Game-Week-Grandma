@@ -65,6 +65,7 @@ public class GrandmaBehaviour : MonoBehaviour
 
             targetVelocity *= speed;
             rb.velocity = targetVelocity;
+            transform.LookAt(checkpointsList[0].transform.position);
         }else
         {
             animator.SetBool("isMoving", false);
