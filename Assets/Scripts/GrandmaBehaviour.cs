@@ -17,6 +17,7 @@ public class GrandmaBehaviour : MonoBehaviour
     public Rigidbody rb;
     public Transform checkpoint;
     private GameObject gameManager;
+    public Animator animator;
 
     private List<GameObject> checkpointsList = new List<GameObject>();
 
@@ -47,6 +48,7 @@ public class GrandmaBehaviour : MonoBehaviour
     {
         if(!rb.isKinematic)
         {
+            animator.SetBool("isMoving", true);
             Vector3 targetVelocity = checkpointsList[0].transform.position - transform.position;
 
             if (Vector3.Distance(transform.position, checkpointsList[0].transform.position) < 1)
@@ -58,6 +60,18 @@ public class GrandmaBehaviour : MonoBehaviour
 
             targetVelocity *= speed;
             rb.velocity = targetVelocity;
+        }else
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.CompareTag("Grab") || col.gameObject.CompareTag("Car"))
+        {
+            animator.SetBool("isDead", true);
+
+            //Game Over script
         }
     }
 
