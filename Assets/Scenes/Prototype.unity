@@ -184,63 +184,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dade319a909302e4b903dccc8b51a99a, type: 3}
---- !u!1001 &560771257
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681833585713377578, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369864757298279211, guid: 210df9c75b655e84999ade648007c95a, type: 3}
-      propertyPath: m_Name
-      value: Explosion Baril
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 210df9c75b655e84999ade648007c95a, type: 3}
 --- !u!1 &598569447
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +198,7 @@ GameObject:
   - component: {fileID: 598569448}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1609799626273899628, guid: b2c778568052f414ba9969e87f2a6391, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 5.46
       objectReference: {fileID: 0}
     - target: {fileID: 1609799626273899628, guid: b2c778568052f414ba9969e87f2a6391, type: 3}
       propertyPath: m_LocalPosition.z
@@ -495,7 +438,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2160166064487368066, guid: b2c778568052f414ba9969e87f2a6391, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1667187390}
   m_SourcePrefab: {fileID: 100100000, guid: b2c778568052f414ba9969e87f2a6391, type: 3}
 --- !u!1 &963194225
 GameObject:
@@ -589,6 +535,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!1 &1667187389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2160166064487368066, guid: b2c778568052f414ba9969e87f2a6391, type: 3}
+  m_PrefabInstance: {fileID: 950872753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1667187390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667187389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51caab15951b8c24e98a68fe02bd83cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barilExplosionPrefab: {fileID: 4369864757298279211, guid: 210df9c75b655e84999ade648007c95a, type: 3}
 --- !u!1001 &1704100463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -772,4 +736,3 @@ SceneRoots:
   - {fileID: 1704100463}
   - {fileID: 230282299}
   - {fileID: 950872753}
-  - {fileID: 560771257}
