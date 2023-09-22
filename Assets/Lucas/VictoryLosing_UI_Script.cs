@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VictoryLosing_UI_Script : MonoBehaviour
 {
     public GameObject VictoryAssets;
-    public Text LoseText;
+    public GameObject LoseAssets;
     public GameObject BackgroundImage;
 
     public int sceneBuildIndex;
@@ -16,7 +16,7 @@ public class VictoryLosing_UI_Script : MonoBehaviour
     void Start()
     {
         VictoryAssets.gameObject.SetActive(false);
-        LoseText.gameObject.SetActive(false);
+        LoseAssets.gameObject.SetActive(false);
         BackgroundImage.gameObject.SetActive(false);
     }
 
@@ -29,6 +29,12 @@ public class VictoryLosing_UI_Script : MonoBehaviour
     public void Victory()
     {
         VictoryAssets.gameObject.SetActive(true);
+        BackgroundImage.gameObject.SetActive(true);
+    }
+
+    public void Losing()
+    {
+        LoseAssets.gameObject.SetActive(true);
         BackgroundImage.gameObject.SetActive(true);
     }
 

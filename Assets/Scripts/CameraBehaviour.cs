@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * This script makes the camera follow the grandma with some smoothness
  */
-public class CameraFollow : MonoBehaviour
+public class CameraBehaviour : MonoBehaviour
 {
     public Transform target;
 

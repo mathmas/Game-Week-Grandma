@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         //TP player near grandma if there distance is to big
         for (int i = 0; i < playersObj.Count; i++)
         {
-            float playerDistance = Vector3.Distance(playersObj[i].transform.position + Vector3.forward * 10f, grandma.transform.position);
+            float playerDistance = Vector3.Distance(playersObj[i].transform.position + Vector3.back * 8f, grandma.transform.position);
             if (playerDistance > playerDistanceTP)
             {
                 playersObj[i].transform.position = grandma.transform.position + Vector3.back * 2f;

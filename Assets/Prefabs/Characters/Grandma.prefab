@@ -5582,11 +5582,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1a879767293134b81898fe2ed8db5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
   rb: {fileID: 0}
   checkpoint: {fileID: 9065333140355979114}
   animator: {fileID: 6417838230009108361}
   gameOverSound: {fileID: 1571678284902197802}
+  EventSystem: {fileID: 0}
 --- !u!1 &3192646030465176648
 GameObject:
   m_ObjectHideFlags: 0

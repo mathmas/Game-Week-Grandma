@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /*
  * This script is the behaviour of the grandma
@@ -19,6 +20,8 @@ public class GrandmaBehaviour : MonoBehaviour
     private GameObject gameManager;
     public Animator animator;
     public AudioSource gameOverSound;
+
+    public GameObject EventSystem;
 
     private List<GameObject> checkpointsList = new List<GameObject>();
 
@@ -77,9 +80,11 @@ public class GrandmaBehaviour : MonoBehaviour
         if(col.gameObject.CompareTag("Grab") || col.gameObject.CompareTag("Car"))
         {
             animator.SetBool("isDead", true);
-            rb.isKinematic = true;
+            speed = 0;
+
 
             //Game Over script
+            StartCoroutine(LosingCoroutine());
             gameOverSound.Play();
         }
     }
@@ -93,4 +98,11 @@ public class GrandmaBehaviour : MonoBehaviour
             gameManagerScript.grandma = this.gameObject;
         }
     }
+
+    IEnumerator LosingCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        EventSystem.GetComponent<VictoryLosing_UI_Script>().Losing();
+    }
+
 }
